@@ -1,0 +1,69 @@
+package aplicacao1;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entidade1.Vetor;
+
+public class Programa {
+	public static void main(String[] args) {
+
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		int n = sc.nextInt();
+
+		Vetor[] vect = new Vetor[n];
+
+		for (int i = 0; i < vect.length; i++) {
+			sc.nextLine();
+			String nome = sc.nextLine();
+			double preco = sc.nextDouble();
+			vect[i] = new Vetor(nome, preco);
+		}
+		double soma = 0.0;
+
+		for (int i = 0; i < vect.length; i++) {
+			soma += vect[i].getPreco();
+
+		}
+		double media = soma / vect.length;
+
+		System.out.printf("a media é %.2f%n", media);
+
+	}
+}
+
+----------------------------------------------------------------
+
+package entidade1;
+
+public class Vetor {
+
+	private String nome;
+	private double preco;
+
+	public Vetor(String nome, double preco) {
+		this.nome = nome;
+		this.preco = preco;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
+}
+
+
