@@ -1,0 +1,71 @@
+package aplicacao;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entidade.Classe;
+
+public class Programa {
+	public static void main(String[] args) {
+
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		int n = sc.nextInt();
+
+		Classe[] vetor = new Classe[n];
+
+		for (int i = 0; i < vetor.length; i++) {
+			sc.nextLine();
+			String nome = sc.nextLine();
+			double preco = sc.nextDouble();
+			vetor[i] = new Classe(nome, preco);
+		}
+
+		double soma = 0.0;
+		for (int i = 0; i < vetor.length; i++) {
+			soma += vetor[i].getPreco();
+		}
+		double media = soma / vetor.length;
+
+		System.out.printf(" a média dos produtos é %.2f%n", media);
+
+		sc.close();
+	}
+}
+
+
+----------------------------------------------------------------------
+
+package entidade;
+
+public class Classe {
+
+	private String nome;
+	private double preco;
+
+	public Classe() {
+	}
+
+	public Classe(String nome, double preco) {
+		this.nome = nome;
+		this.preco = preco;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
+}
