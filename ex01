@@ -1,0 +1,38 @@
+package aplicacao;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Programa {
+
+	public static void main(String[] args) {
+
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		double[] notasdoalunoA = new double[3];
+
+		notasdoalunoA[0] = 5.6;
+		notasdoalunoA[1] = 6.8;
+		notasdoalunoA[2] = 8.8;
+
+		double media = 0;
+		for (int i = 0; i < notasdoalunoA.length; i++) {
+			media += notasdoalunoA[i];
+		}
+		double avg = media / notasdoalunoA.length;
+
+		double[] notasdoalunoB = { 5.5, 4.8, 9.0 };
+
+		double media2 = 0;
+		for (int i = 0; i < notasdoalunoB.length; i++) {
+			media2 += notasdoalunoB[i];
+		}
+
+		double avg2 = media2 / notasdoalunoB.length;
+
+		System.out.println("a nota do aluno A é" + avg);
+		System.out.println("a nota do aluno B é" + avg2);
+		sc.close();
+	}
+}
